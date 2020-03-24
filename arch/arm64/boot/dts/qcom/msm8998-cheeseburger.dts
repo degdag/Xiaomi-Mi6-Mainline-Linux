@@ -304,6 +304,10 @@
 	vdda-pll-supply = <&vreg_l2a_1p2>;
 };
 
+&pcie0 {
+	status = "disabled";
+};
+
 &wifi {
 	status = "okay";
 
