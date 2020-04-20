@@ -261,10 +261,10 @@ static const struct pinctrl_pin_desc msm8998_pins[] = {
 	PINCTRL_PIN(147, "GPIO_147"),
 	PINCTRL_PIN(148, "GPIO_148"),
 	PINCTRL_PIN(149, "GPIO_149"),
-	PINCTRL_PIN(150, "SDC2_CLK"),
-	PINCTRL_PIN(151, "SDC2_CMD"),
-	PINCTRL_PIN(152, "SDC2_DATA"),
-	PINCTRL_PIN(153, "UFS_RESET"),
+	PINCTRL_PIN(150, "UFS_RESET"),
+	PINCTRL_PIN(151, "SDC2_CLK"),
+	PINCTRL_PIN(152, "SDC2_CMD"),
+	PINCTRL_PIN(153, "SDC2_DATA"),
 };
 
 #define DECLARE_MSM_GPIO_PINS(pin) \
@@ -420,10 +420,10 @@ DECLARE_MSM_GPIO_PINS(147);
 DECLARE_MSM_GPIO_PINS(148);
 DECLARE_MSM_GPIO_PINS(149);
 
-static const unsigned int sdc2_clk_pins[] = { 150 };
-static const unsigned int sdc2_cmd_pins[] = { 151 };
-static const unsigned int sdc2_data_pins[] = { 152 };
-static const unsigned int ufs_reset_pins[] = { 153 };
+static const unsigned int ufs_reset_pins[] = { 150 };
+static const unsigned int sdc2_clk_pins[] = { 151 };
+static const unsigned int sdc2_cmd_pins[] = { 152 };
+static const unsigned int sdc2_data_pins[] = { 153 };
 
 enum msm8998_functions {
 	msm_mux_adsp_ext,
@@ -1497,10 +1497,10 @@ static const struct msm_pingroup msm8998_groups[] = {
 	PINGROUP(147, WEST, _, _, _, _, _, _, _, _, _),
 	PINGROUP(148, WEST, _, _, _, _, _, _, _, _, _),
 	PINGROUP(149, WEST, _, _, _, _, _, _, _, _, _),
+	UFS_RESET(ufs_reset, 0x19d000),
 	SDC_QDSD_PINGROUP(sdc2_clk, 0x999000, 14, 6),
 	SDC_QDSD_PINGROUP(sdc2_cmd, 0x999000, 11, 3),
 	SDC_QDSD_PINGROUP(sdc2_data, 0x999000, 9, 0),
-	UFS_RESET(ufs_reset, 0x19d000),
 };
 
 static const struct msm_pinctrl_soc_data msm8998_pinctrl = {
@@ -1510,7 +1510,7 @@ static const struct msm_pinctrl_soc_data msm8998_pinctrl = {
 	.nfunctions = ARRAY_SIZE(msm8998_functions),
 	.groups = msm8998_groups,
 	.ngroups = ARRAY_SIZE(msm8998_groups),
-	.ngpios = 150,
+	.ngpios = 151,
 };
 
 static int msm8998_pinctrl_probe(struct platform_device *pdev)
