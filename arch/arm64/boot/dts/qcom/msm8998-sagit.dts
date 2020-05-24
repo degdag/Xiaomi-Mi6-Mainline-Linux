@@ -91,11 +91,11 @@
 		#address-cells = <1>;
 		#size-cells = <0>;
 		interrupts-extended = <&tlmm 125 0x2008>;
-		pinctrl-names = "default", "sleep";
-		pinctrl-0 = <&touch_default>;
-		pinctrl-1 = <&touch_int_suspend &touch_reset_suspend>;
-		vdd-supply = <&vreg_l28_3p0>;
-		vio-supply = <&vreg_l6a_1p8>;
+		pinctrl-names = "pmx_ts_active", "pmx_ts_suspend";
+		pinctrl-0 = <&ts_active>;
+		pinctrl-1 = <&ts_int_suspend &ts_reset_suspend>;
+		vdd-supply = <&vreg_lvs1a_1p8>;
+		vio-supply = <&vreg_l7a_1p8>;
 		syna,reset-delay-ms = <200>;
 		syna,startup-delay-ms = <200>;
 
