@@ -2332,6 +2332,36 @@ static const struct panel_desc okaya_rs800480t_7x0gp = {
 	.bus_format = MEDIA_BUS_FMT_RGB666_1X18,
 };
 
+static const struct drm_display_mode jdi_fhd_r63452_mode = {
+	.clock = (1080 + 120 + 16 + 40) * (1920 + 4 + 2 + 4) * 60 / 1000, // 145444.8
+	.hdisplay = 1080,
+	.hsync_start = 1080 + 120,       // 1200
+	.hsync_end = 1080 + 120 + 16,    // 1216
+	.htotal = 1080 + 120 + 16 + 40,  // 1256
+	.vdisplay = 1920,
+	.vsync_start = 1920 + 4,         // 1924
+	.vsync_end = 1920 + 4 + 2,       // 1926
+	.vtotal = 1920 + 4 + 2 + 4,      // 1930
+	.vrefresh = 60,
+	.width_mm = 64,
+	.height_mm = 114,
+};
+
+static const struct panel_desc_dsi jdi_fhd_r63452 = {
+	.desc = {
+		.modes = &jdi_fhd_r63452_mode,
+		.num_modes = 1,
+		.bpc = 8,
+		.size = {
+			.width = 64,
+			.height = 114,
+		},
+	},
+	.flags = MIPI_DSI_MODE_VIDEO_BURST | MIPI_DSI_CLOCK_NON_CONTINUOUS,
+	.format = MIPI_DSI_FMT_RGB888,
+	.lanes = 4,
+};
+
 static const struct drm_display_mode olimex_lcd_olinuxino_43ts_mode = {
 	.clock = 9000,
 	.hdisplay = 480,
@@ -3447,6 +3477,9 @@ static const struct of_device_id platform_of_match[] = {
 	}, {
 		.compatible = "samsung,ltn140at29-301",
 		.data = &samsung_ltn140at29_301,
+	}, {
+                .compatible = "jdi_fhd_r63452-simple",
+		.data = &jdi_fhd_r63452
 	}, {
 		.compatible = "satoz,sat050at40h12r2",
 		.data = &satoz_sat050at40h12r2,
