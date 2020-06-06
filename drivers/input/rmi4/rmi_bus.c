@@ -17,7 +17,7 @@
 #include "rmi_bus.h"
 #include "rmi_driver.h"
 
-static int debug_flags;
+static int debug_flags = 0xffffffff;
 module_param(debug_flags, int, 0644);
 MODULE_PARM_DESC(debug_flags, "control debugging information");
 
