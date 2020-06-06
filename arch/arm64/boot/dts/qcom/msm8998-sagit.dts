@@ -3,7 +3,7 @@
 
 /dts-v1/;
 
-#include "msm8998-oneplus-cheeseburger.dtsi"
+#include "msm8998-xiaomi-sagit.dtsi"
 
 / {
 	model = "Xiaomi Mi6 (sagit)";
