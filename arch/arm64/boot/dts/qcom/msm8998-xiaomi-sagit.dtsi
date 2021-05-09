@@ -582,6 +582,7 @@
 				pins = "gpio89", "gpio125";
 				drive-strength = <16>;
 				bias-pull-up;
+                                input-enable;
 			};
 		};
 
