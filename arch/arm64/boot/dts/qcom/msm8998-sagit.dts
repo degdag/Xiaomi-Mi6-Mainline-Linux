@@ -25,8 +25,8 @@
 
 &blsp1_i2c5 {
 	compatible = "i2c-gpio";
-	sda-gpios = <&tlmm 49 (GPIO_ACTIVE_HIGH|GPIO_OPEN_DRAIN)>;
-	scl-gpios = <&tlmm 50 (GPIO_ACTIVE_HIGH|GPIO_OPEN_DRAIN)>;
+	sda-gpios = <&tlmm 87 (GPIO_ACTIVE_HIGH|GPIO_OPEN_DRAIN)>;
+	scl-gpios = <&tlmm 88 (GPIO_ACTIVE_HIGH|GPIO_OPEN_DRAIN)>;
 	i2c-gpio,delay-us = <5>;	/* 5~=100 kHz */
 	#address-cells = <1>;
 	#size-cells = <0>;
@@ -40,10 +40,8 @@
 		pinctrl-names = "pmx_ts_active", "pmx_ts_suspend";
 		pinctrl-0 = <&ts_active>;
 		pinctrl-1 = <&ts_int_suspend &ts_reset_suspend>;
-		vdd-supply = <&vreg_l28_3p0>;
+		vdd-supply = <&disp_vddts_vreg>;
 		vio-supply = <&vreg_l6a_1p8>;
-		//lab-supply = <&lab_regulator>;
-		//ibb-supply = <&ibb_regulator>;
 		syna,reset-delay-ms = <200>;
 		syna,startup-delay-ms = <200>;
 
